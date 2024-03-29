@@ -11,7 +11,6 @@ from launch_ros.substitutions import FindPackageShare
 
 import xacro
 
-
 def generate_launch_description():
 
     use_sim_time = LaunchConfiguration('use_sim_time')
@@ -64,5 +63,5 @@ def generate_launch_description():
         rviz_node,
         jspg_node,
         robot_state_publisher_node,
-        robot_localization_node
+        # robot_localization_node
     ])

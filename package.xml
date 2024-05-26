@@ -22,9 +22,9 @@
   <depend>pluginlib</depend>
   <depend>rclcpp</depend>
   <depend>rclcpp_lifecycle</depend>
-  <depend>libserial-dev</depend>
   <depend>robot_localization</depend>
   <depend>imu_tools</depend>  
+  <depend>twist_mux</depend>
 
 
   <export>

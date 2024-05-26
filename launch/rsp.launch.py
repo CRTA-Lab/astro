@@ -55,13 +55,23 @@ def generate_launch_description():
        condition=IfCondition(run_ekf)
     )
 
+    twist_mux_node = Node(
+        package = "twist_mux",
+        executable = "twist_mux",
+        name = "twist_mux",
+        output = "screen",
+        parameters=[os.path.join(pkg_path, 'config/twist_mux.yaml')],
+        remappings={('/cmd_vel_out', '/cmd_vel')},
+    )
+
     return LaunchDescription([
         DeclareLaunchArgument('use_sim_time', default_value='false', description='Use sim time if true'),
         DeclareLaunchArgument('run_jspg', default_value='false', description='Run joint_state_publisher_gui Node'),
         DeclareLaunchArgument('run_rviz', default_value='false', description='Run Rviz'),
-        DeclareLaunchArgument('run_ekf', default_value='true', description='Run Robot Localization Ekf Node'),
+        # DeclareLaunchArgument('run_ekf', default_value='true', description='Run Robot Localization Ekf Node'),
         rviz_node,
         jspg_node,
         robot_state_publisher_node,
+        twist_mux_node,
         # robot_localization_node
     ])

@@ -72,6 +72,6 @@ def generate_launch_description():
         rviz_node,
         jspg_node,
         robot_state_publisher_node,
-        twist_mux_node,
+        # twist_mux_node,
         # robot_localization_node
     ])

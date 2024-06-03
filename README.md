@@ -115,7 +115,7 @@ Make sure you are running Ubuntu 22.04 \
     **Enjoy!** 
 
 ## Launch parameters
-The *rsp.launch.py* has a few launch parameters, to view them run:
+The *rsp.launch.py* launch file has a few launch parameters, to list them run:
 
 ```bash
 ros2 launch astro rsp.launch.py --show-args

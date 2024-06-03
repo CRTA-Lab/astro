@@ -3,7 +3,7 @@ This is a ROS2 Humble package for interfacing with an ASTRO robot.
 
 ## Installing ROS2 Humble
 
-Make sure you are running Ubuntu 22.04 \
+Make sure you are running Ubuntu 22.04. \
 [ROS2 Humble Installation](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
 
 ## Configuring ROS2 Environment
@@ -12,7 +12,7 @@ Make sure you are running Ubuntu 22.04 \
 ## Creating a ROS2 workspace
 [ROS2 Tutorials Creating a workspace](https://docs.ros.org/en/humble/Tutorials/Workspace/Creating-A-Workspace.html)
 
-1. example, creating a workspace named astro_ws:
+1. Example, creating a workspace named astro_ws:
 
     ```bash
     mkdir -p ~/astro_ws/src
@@ -20,13 +20,13 @@ Make sure you are running Ubuntu 22.04 \
     ```
 ## Install and compile ASTRO package
 
-1. **Clone ASTRO package from GitHub** \
+1. **Clone ASTRO package from GitHub**
 
     Make sure you are inside **astro_ws/src** folder (generally in **src** folder of your workspace).
     ```bash
     git clone -b ros2-humble https://github.com/AndrijaAdamovic/ASTRO.git
     ```
-2. **Installing dependencies** \
+2. **Installing dependencies**
 
     Make sure you are now in your main workspace folder, in this example **~/astro_ws/** \
     Make sure you have [rosdep](https://docs.ros.org/en/humble/Tutorials/Intermediate/Rosdep.html) set-up.
@@ -35,7 +35,7 @@ Make sure you are running Ubuntu 22.04 \
     cd ~/astro_ws/
     rosdep install --from-paths src -y --ignore-src
     ```
-3. **Building ASTRO package** \
+3. **Building ASTRO package**
 
     Make sure you are still in your main workspace folder, in this example **~/astro_ws/**
     ```bash
@@ -47,28 +47,29 @@ Make sure you are running Ubuntu 22.04 \
 
     If your ws is not named astro_ws, replace astro_ws with your ws name in the following commands. 
 
-    **Bash**
+    **Bash (default):**
     ```bash
     echo "source astro_ws/install/setup.bash" >> ~/.bashrc
     source ~/.bashrc
     ```
 
-    ***This is for Zsh users, don't paste if not using Zsh***
+    ***If using Zsh:***
     ```bash
     echo "source astro_ws/install/setup.zsh" >> ~/.zshrc
     source ~/.zshrc
     ```
 ## Usage
-1. **Chaning RMW Implementation to Cyclone DDS** \
+1. **Chaning RMW Implementation to Cyclone DDS** 
+
     For better data transfer between your PC and the ASTRO robot change RMW implementation to Cyclone DDS \
 
-    **First method (suggested) (bash):**
+    **First method (suggested) (bash - default):**
     ```bash
     echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> ~/.bashrc
     source ~/.bashrc
     ```
 
-    *(Paste if using zsh)* **First method (suggested) (zsh):**
+    *(If using zsh)* **First method (suggested) (zsh):**
     ```bash
     echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> ~/.zshrc
     source ~/.zshrc
@@ -80,7 +81,8 @@ Make sure you are running Ubuntu 22.04 \
     export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
     ```
 
-2. **Configuring ROS_DOMAIN_ID** \
+2. **Configuring ROS_DOMAIN_ID** 
+
     First, make sure ASTRO Robot is switched on, and that you are on the same network as the robot. 
 
     Now, to work with an ASTRO robot, look up it's number, that number is the ROS_DOMAIN_ID. \
@@ -92,7 +94,7 @@ Make sure you are running Ubuntu 22.04 \
 
     However, this will work for only one terminal, in every other terminal we must run the command above to have access to the robot. If you don't want to run the export command in every new terminal, do this. 
 
-    **If using bash (standard):**
+    **If using bash (default):**
     ```bash
     echo "export ROS_DOMAIN_ID=number of your ASTRO robot" >> ~/.bashrc
     source ~/.bashrc
@@ -104,6 +106,7 @@ Make sure you are running Ubuntu 22.04 \
     source ~/.zshrc
     ```
 3. **Starting Robot State Publisher**
+
     Now, with RMW implementation changed, and corresponding ROS_DOMAIN_ID exported, and your workspace sourced, execute:
 
     ```bash
@@ -115,6 +118,7 @@ Make sure you are running Ubuntu 22.04 \
     **Enjoy!** 
 
 ## Launch parameters
+
 The *rsp.launch.py* launch file has a few launch parameters, to list them run:
 
 ```bash

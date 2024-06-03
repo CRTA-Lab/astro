@@ -25,6 +25,7 @@
   <depend>robot_localization</depend>
   <depend>imu_tools</depend>  
   <depend>twist_mux</depend>
+  <depend>rmw_cyclonedds_cpp</depend>
 
 
   <export>

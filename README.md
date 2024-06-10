@@ -25,7 +25,7 @@ Make sure you are running Ubuntu 22.04. \
     Make sure you are inside **astro_ws/src** folder (generally in **src** folder of your workspace).
     ```bash
     cd ~/astro_ws/src
-    git clone -b ros2-humble https://github.com/AndrijaAdamovic/ASTRO.git
+    git clone -b ros2-humble https://github.com/CRTA-Lab/astro.git
     ```
 2. **Installing dependencies**
 
